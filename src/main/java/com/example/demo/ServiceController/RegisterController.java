@@ -24,7 +24,7 @@ public class RegisterController {
     @Transactional(isolation = Isolation.SERIALIZABLE)
     public int Register() {
 
-        int resultInt=0;
+        int resultInt = 0;
 
         try {
             ResultInfo result = registerService.Register("zuochaoaaa", "123456",
@@ -33,10 +33,8 @@ public class RegisterController {
 
             int accountId = ((AccountInfo) result.get_data()).get_id();
             ResultInfo result2 = registerrecordService.AddRegisterRecord(accountId, 1);
-        }
-        catch (Exception ex)
-        {
-            resultInt=-1;
+        } catch (Exception ex) {
+            resultInt = -1;
         }
 
         return resultInt;
