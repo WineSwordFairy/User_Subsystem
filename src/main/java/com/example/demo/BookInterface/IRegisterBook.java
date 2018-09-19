@@ -15,5 +15,4 @@ public interface IRegisterBook {
     @SelectKey(statement = "SELECT LAST_INSERT_ID()",keyProperty="_id", before=false, resultType=int.class )
     int insert(AccountInfo accountInfo);
 
-     int test();
 }
