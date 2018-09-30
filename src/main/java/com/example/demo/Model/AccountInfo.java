@@ -1,15 +1,20 @@
 package com.example.demo.Model;
 
+import java.util.Date;
+
 public class AccountInfo {
 
-    public AccountInfo(String _userName, String _password, String _name, String _email, String _remark) {
+    public AccountInfo(String _userName, String _password, String _name, String _email, String _remark, Date _createDate, int _provinceId, int _cityId) {
+        this._id = _id;
         this._userName = _userName;
         this._password = _password;
         this._name = _name;
         this._email = _email;
         this._remark = _remark;
+        this._createDate = _createDate;
+        this._provinceId = _provinceId;
+        this._cityId = _cityId;
     }
-
 
     private int _id;
 
@@ -22,6 +27,34 @@ public class AccountInfo {
     private String _email;
 
     private String _remark;
+
+    public Date get_createDate() {
+        return _createDate;
+    }
+
+    public void set_createDate(Date _createDate) {
+        this._createDate = _createDate;
+    }
+
+    public int get_provinceId() {
+        return _provinceId;
+    }
+
+    public void set_provinceId(int _provinceId) {
+        this._provinceId = _provinceId;
+    }
+
+    public int get_cityId() {
+        return _cityId;
+    }
+
+    public void set_cityId(int _cityId) {
+        this._cityId = _cityId;
+    }
+
+    private Date _createDate;
+    private int _provinceId;
+    private int _cityId;
 
     public int get_id() {
         return _id;

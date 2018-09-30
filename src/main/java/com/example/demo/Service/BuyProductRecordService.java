@@ -5,6 +5,7 @@ import com.example.demo.BookInterface.IBuyProductRecordBook;
 import com.example.demo.BookInterface.IProductBook;
 import com.example.demo.Model.BuyProductRecordInfo;
 import com.example.demo.ResultInfo;
+import com.example.demo.Tools.DateTool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -21,8 +22,8 @@ public class BuyProductRecordService extends Person {
         return _myBook;
     }
 
-    public ResultInfo AddBuyProductRecord(int accountId, int productId, int count) {
-        BuyProductRecordInfo info = new BuyProductRecordInfo(accountId, productId, count);
+    public ResultInfo AddBuyProductRecord(int accountId, int productId, int count,String createDate) {
+        BuyProductRecordInfo info = new BuyProductRecordInfo(accountId, productId, count,DateTool.StringToDate(createDate));
         get_myBook().insert(info);
         return ProviceResult(0,"Sucessfully!");
     }

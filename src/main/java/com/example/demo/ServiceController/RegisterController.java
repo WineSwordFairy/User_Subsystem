@@ -21,16 +21,12 @@ public class RegisterController {
     private RegisterRecordService registerrecordService;
 
     @RequestMapping("/Register")
-    @Transactional(isolation = Isolation.SERIALIZABLE)
-    public int Register(String userName, String password,String email ,String name,String remark) {
-
-        String test=userName;
+    @Transactional(isolation = Isolation.DEFAULT)
+    public int Register(String userName, String password, String email, String name, String remark, String createDate, int cityId, int provinceId) {
         int resultInt = 0;
-
-
         try {
             ResultInfo result = registerService.Register(userName, password,
-                    name, email, remark);
+                    name, email, remark, createDate, cityId, provinceId);
 
             int accountId = ((AccountInfo) result.get_data()).get_id();
             ResultInfo result2 = registerrecordService.AddRegisterRecord(accountId, 1);

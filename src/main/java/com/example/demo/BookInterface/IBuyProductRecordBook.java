@@ -13,6 +13,6 @@ import java.util.Date;
 @Mapper
 public interface IBuyProductRecordBook {
 
-    @Insert("INSERT INTO BuyProductRecordTable(AccountId,ProductId,Count) VALUES(#{accountId}, #{productId},#{count})")
+    @Insert("INSERT INTO BuyProductRecordTable(AccountId,ProductId,Count,CreateDate) VALUES(#{accountId}, #{productId},#{count},#{createDate})")
     int insert(BuyProductRecordInfo info);
 }

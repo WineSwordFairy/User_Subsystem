@@ -21,15 +21,15 @@ public class BuyProductController {
 
 
     @RequestMapping("/BuyProduct")
-    @Transactional(isolation = Isolation.SERIALIZABLE)
-    public String BuyProduct(int accountId, int productId, int count) {
+    @Transactional(isolation = Isolation.DEFAULT)
+    public String BuyProduct(int accountId, int productId, int count,String createDate) {
         try {
             //查询商品数量。
             ResultInfo result = productService.BuyProduct(accountId, productId, count);
 
             if (result.get_code() == 0) {
                 ///商品数量足够。
-                buyProductRecordService.AddBuyProductRecord(accountId, productId, count);
+                buyProductRecordService.AddBuyProductRecord(accountId, productId, count,createDate);
                 return "成功!";
             }
             else {
