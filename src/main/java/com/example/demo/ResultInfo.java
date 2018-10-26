@@ -2,46 +2,46 @@ package com.example.demo;
 
 public class ResultInfo {
 
-    private int _code;
+    private int code;
 
-    private String _message;
+    private String message;
 
-    private Object _data;
+    private Object data;
 
-    public int get_code() {
-        return _code;
+    public int getcode() {
+        return code;
     }
 
-    public void set_code(int _code) {
-        this._code = _code;
+    public void setcode(int code) {
+        this.code = code;
     }
 
-    public String get_message() {
-        return _message;
+    public String getmessage() {
+        return message;
     }
 
-    public void set_message(String _message) {
-        this._message = _message;
+    public void setmessage(String message) {
+        this.message = message;
     }
 
-    public Object get_data() {
-        return _data;
+    public Object getdata() {
+        return data;
     }
 
-    public void set_data(Object _data) {
-        this._data = _data;
+    public void setdata(Object data) {
+        this.data = data;
     }
 
 
-    public ResultInfo(int _code, String _message, Object _data) {
-        this._code = _code;
-        this._message = _message;
-        this._data = _data;
+    public ResultInfo(int code, String message, Object data) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
     }
 
-    public ResultInfo(int _code, String _message) {
-        this._code = _code;
-        this._message = _message;
-        this._data=new Object();
+    public ResultInfo(int _code, String message) {
+        this.code = _code;
+        this.message = message;
+        this.data=new Object();
     }
 }

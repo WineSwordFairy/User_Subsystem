@@ -28,7 +28,7 @@ public class RegisterController {
             ResultInfo result = registerService.Register(userName, password,
                     name, email, remark, createDate, cityId, provinceId);
 
-            int accountId = ((AccountInfo) result.get_data()).get_id();
+            int accountId = ((AccountInfo) result.getdata()).getId();
             ResultInfo result2 = registerrecordService.AddRegisterRecord(accountId, 1);
         } catch (Exception ex) {
             resultInt = -1;

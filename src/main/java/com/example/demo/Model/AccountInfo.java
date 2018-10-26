@@ -1,118 +1,116 @@
 package com.example.demo.Model;
 
+import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
-public class AccountInfo {
+public class AccountInfo implements Serializable {
 
-    public AccountInfo(String _userName, String _password, String _name, String _email, String _remark, Date _createDate, int _provinceId, int _cityId) {
-        this._id = _id;
-        this._userName = _userName;
-        this._password = _password;
-        this._name = _name;
-        this._email = _email;
-        this._remark = _remark;
-        this._createDate = _createDate;
-        this._provinceId = _provinceId;
-        this._cityId = _cityId;
+    private Integer id;
+    private String userName;
+    private String password;
+    private String name;
+    private String email;
+    private String remark;
+    private Date createDate;
+    private Integer provinceId;
+    private Integer cityId;
+    private Integer role;
+
+    public AccountInfo() {
     }
 
-    private int _id;
-
-    private String _userName;
-
-    private String _password;
-
-    private String _name;
-
-    private String _email;
-
-    private String _remark;
-
-    public Date get_createDate() {
-        return _createDate;
+    public AccountInfo(Integer id, String userName, String password, String name, String email, String remark,
+                       Timestamp createDate, Integer provinceId, Integer cityId, Integer role) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+        this.remark = remark;
+        this.createDate = createDate;
+        this.provinceId = provinceId;
+        this.cityId = cityId;
+        this.role = role;
     }
 
-    public void set_createDate(Date _createDate) {
-        this._createDate = _createDate;
+    public Integer getId() {
+        return id;
     }
 
-    public int get_provinceId() {
-        return _provinceId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public void set_provinceId(int _provinceId) {
-        this._provinceId = _provinceId;
+    public String getUserName() {
+        return userName;
     }
 
-    public int get_cityId() {
-        return _cityId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public void set_cityId(int _cityId) {
-        this._cityId = _cityId;
+    public String getPassword() {
+        return password;
     }
 
-    private Date _createDate;
-    private int _provinceId;
-    private int _cityId;
-
-    public int get_id() {
-        return _id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void set_id(int _id) {
-        this._id = _id;
+    public String getName() {
+        return name;
     }
 
-
-    public String get_userName() {
-        return _userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void set_userName(String _userName) {
-        this._userName = _userName;
+    public String getEmail() {
+        return email;
     }
 
-    public String get_password() {
-        return _password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void set_password(String _password) {
-        this._password = _password;
+    public String getRemark() {
+        return remark;
     }
 
-    public String get_name() {
-        return _name;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
-    public void set_name(String _name) {
-        this._name = _name;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public String get_email() {
-        return _email;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
-    public void set_email(String _email) {
-        this._email = _email;
+    public Integer getProvinceId() {
+        return provinceId;
     }
 
-    public String get_remark() {
-        return _remark;
+    public void setProvinceId(Integer provinceId) {
+        this.provinceId = provinceId;
     }
 
-    public void set_remark(String _remark) {
-        this._remark = _remark;
+    public Integer getCityId() {
+        return cityId;
     }
 
-    @Override
-    public String toString() {
-        return "AccountInfo{" +
-                "_userName='" + _userName + '\'' +
-                ", _password='" + _password + '\'' +
-                ", _name='" + _name + '\'' +
-                ", _email='" + _email + '\'' +
-                ", _remark='" + _remark + '\'' +
-                '}';
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public Integer getRole() {
+        return role;
+    }
+
+    public void setRole(Integer role) {
+        this.role = role;
     }
 }
